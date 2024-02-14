@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export default function Navbar() {
     return (
-        <header className="lg:py-6 flex items-center z-10 fixed top-0 left-0 right-0 bg-opacity-25 bg-neutral-700 ">
+        <header className="lg:py-6 flex items-center z-10 fixed top-0 left-0 right-0 bg-opacity-35 bg-neutral-800 ">
             <nav className="z-40 container mx-auto">
                 <div>
                     {/* Mobile */}
