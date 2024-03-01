@@ -65,14 +65,14 @@ export default function News({ data }: NewsProps) {
   	if (isLoading) return <Loader />;
 
   	return (
-		<section className="py-16 px-4 container my-16 rounded-md mx-auto bg-[#DEF7FF] text-black">
+		<section className="py-16 px-4 container my-16 rounded-md mx-auto bg-primary/5">
 			<div className="text-center mb-12">
 				<h2 className="font-bold text-4xl mb-1">{data.title} News</h2>
 				<p className="">{data.description}</p>
 			</div>
 			<OnePost data={datas} ></OnePost>
 			<div className="pt-12 flex justify-center">
-				<a href="/blog" className="inline-flex mt-3 py-2 px-6 font-bold text-lg rounded-sm transition-colors uppercase bg-[#FFDEC2] text-[#3C3025] hover:bg-[#B3977E]">More Blogs</a>
+				<a href="/blog" className="inline-flex mt-3 py-2 px-6 font-bold text-lg rounded-sm uppercase bg-secondary text-text transition ease-in-out hover:translate-y-[-5px]">More Blogs</a>
 			</div>
 		</section>
   	);

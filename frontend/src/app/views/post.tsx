@@ -1,6 +1,8 @@
 import { formatDate, getStrapiMedia } from '@/app/utils/api-helpers';
 import { postRenderer } from '@/app/utils/post-renderer';
+import { url } from 'inspector';
 import Image from 'next/image';
+import { renderTagStyle } from '../utils/render-tag-style';
 
 interface Article {
     id: number;
@@ -8,6 +10,7 @@ interface Article {
         title: string;
         description: string;
         slug: string;
+        tags: string;
         cover: {
             data: {
                 attributes: {
@@ -21,25 +24,28 @@ interface Article {
 }
 
 export default function Post({ data }: { data: Article }) {
-    const { title, description, publishedAt, cover} = data.attributes;
+    const { title, tags, publishedAt, cover} = data.attributes;
     const imageUrl = getStrapiMedia(cover.data.attributes.url);
-
+    console.log(imageUrl);
     return (
-        <article className="space-y-8 text-black">
+        <article className="space-y-8">
            
-            <Image
+            {/* <Image
                 src={imageUrl || ""}
                 alt="article cover image"
-                width={400}
-                height={400}
-                className="w-full h-full object-cover rounded-lg"
-            />
+                width={1080}
+                height={720}
+                className="w-full h-auto rounded-lg"
+            /> */}
+            <div className={`bg-cover bg-center rounded-md pb-[50%]`} style={{backgroundImage: `url(${imageUrl})`}}>
+            </div>
             
             <div className="">
                 <div className='mb-2'>
-                    <h1 className='text-center text-4xl mb-2 font-bold'>{title}</h1>
-                    <div className='flex items-center justify-center text-gray-600 font-bold mb-8'>
-                        <div></div>
+                    <h1 className='text-center text-5xl mb-2 font-bold'>{title}</h1>
+                    <div className='flex items-center justify-center font-bold mb-8'>
+                        <div className={renderTagStyle(tags)}>{tags}</div>
+                        <div className="px-2">-</div>
                         <time>{formatDate(publishedAt)}</time>
                     </div>
                 </div>

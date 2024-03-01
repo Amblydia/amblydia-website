@@ -34,7 +34,7 @@
   
   /* Horizontal rules */
   .rich-text hr {
-    @apply border-gray-300 my-8;
+    @apply my-8;
   }
   
   .rich-text a {
@@ -61,7 +61,7 @@
   
   /* Blockquotes */
   .rich-text blockquote {
-    @apply border-l-4 border-gray-400 pl-4 py-2 mb-4;
+    @apply border-l-4 pl-4 py-2 mb-4;
   }
   
   /* Lists */
@@ -87,24 +87,24 @@
   
   /* Code blocks */
   .rich-text pre {
-    @apply font-mono bg-gray-900 text-gray-100 rounded p-4  my-6;
+    @apply rounded p-4  my-6;
   }
   
   .rich-text code {
-    @apply font-mono bg-gray-900 text-gray-100 rounded px-2 py-1;
+    @apply rounded px-2 py-1;
   }
   
   /* Tables */
   .rich-text table {
-    @apply w-full border-collapse border-gray-300 my-6;
+    @apply w-full border-collapse my-6;
   }
   
   .rich-text th {
-    @apply bg-gray-900 text-left py-2 px-4 font-semibold border-b border-gray-300;
+    @apply text-left py-2 px-4 font-semibold border-b ;
   }
   
   .rich-text td {
-    @apply py-2 px-4 border-b border-gray-300;
+    @apply py-2 px-4 border-b ;
   }
   
   /* Images */

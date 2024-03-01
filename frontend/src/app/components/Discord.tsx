@@ -12,7 +12,7 @@ export default function Discord({ data }: DiscordProps) {
 	return (
 		<section className="container mx-auto pb-20">
 			<div className="max-w-xl mx-auto items-center relative">
-				<div className="rounded-md bg-[#ffdec2] text-black relative px-20 py-10">
+				<div className="rounded-md bg-text text-background relative px-20 py-10">
 					<div className="grid grid-cols-1 items-center justify-center">
 						<div className="text-center">
 							<div className="font-bold text-2xl mb-4">{data.title}</div>
