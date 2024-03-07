@@ -62,14 +62,17 @@ export async function generateStaticParams() {
     const options = { headers: { Authorization: `Bearer ${token}` } };
     const articleResponse = await fetchAPI(
         path,
+        {
+            populate: ["slug"],
+        },
         options
     );
 
     return articleResponse.data.map(
-        (article: {
+        (post: {
             attributes: {
                 slug: string;
             };
-        }) => ({ slug: article.attributes.slug})
+        }) => ({ slug: post.attributes.slug})
     );
 }

@@ -1,10 +1,8 @@
 import { formatDate, getStrapiMedia } from '@/app/utils/api-helpers';
 import { postRenderer } from '@/app/utils/post-renderer';
-import { url } from 'inspector';
-import Image from 'next/image';
 import { renderTagStyle } from '../utils/render-tag-style';
 
-interface Article {
+interface Post {
     id: number;
     attributes: {
         title: string;
@@ -23,13 +21,11 @@ interface Article {
     };
 }
 
-export default function Post({ data }: { data: Article }) {
+export default function Post({ data }: { data: Post }) {
     const { title, tags, publishedAt, cover} = data.attributes;
     const imageUrl = getStrapiMedia(cover.data.attributes.url);
-    console.log(imageUrl);
     return (
         <article className="space-y-8">
-           
             {/* <Image
                 src={imageUrl || ""}
                 alt="article cover image"
@@ -49,8 +45,6 @@ export default function Post({ data }: { data: Article }) {
                         <time>{formatDate(publishedAt)}</time>
                     </div>
                 </div>
-                
-
                 <div className='px-24 text-lg leading-7'>{data.attributes.blocks.map((section: any, index: number) => postRenderer(section, index))}</div>
             </div>
         </article>

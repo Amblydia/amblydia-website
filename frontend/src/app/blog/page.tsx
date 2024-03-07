@@ -3,7 +3,7 @@ import { useState, useEffect, useCallback } from "react";
 import { fetchAPI } from "../utils/fetch-api";
 
 import Loader from "../components/Loader";
-import Blog from "../views/blog-list";
+import PostList from "../views/blog-list";
 
 interface Meta {
 	pagination: {
@@ -62,7 +62,7 @@ export default function Profile() {
 	if (isLoading) return <Loader />;
 
   	return (
-		<Blog data={data}>
+		<PostList data={data}>
 			{meta!.pagination.start + meta!.pagination.limit <
 			meta!.pagination.total && (
 				<div className="flex justify-center">
@@ -75,6 +75,6 @@ export default function Profile() {
 					</button>
 				</div>
 			)}
-		</Blog>
+		</PostList>
   	);
 }
