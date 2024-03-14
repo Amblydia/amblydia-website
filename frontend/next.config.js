@@ -4,9 +4,8 @@ const nextConfig = {
 	images: {
 		remotePatterns: [
 			{
-				protocol: 'http',
-				hostname: '164.68.103.165',
-				port: '1337',
+				protocol: 'https',
+				hostname: 'admin.amblydia.com',
 				pathname: '/uploads/**',
 			},
 			{
