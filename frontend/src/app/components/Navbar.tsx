@@ -13,6 +13,14 @@ interface NavLink {
 	text: string;
 }
 
+interface Button {
+	id: number;
+	url: string;
+	text: string;
+	type: string;
+	newTab: boolean;
+}
+
 interface MobileNavLink extends NavLink {
   	closeMenu: () => void;
 }
@@ -26,6 +34,14 @@ function NavLink({ url, text }: NavLink) {
 				{text}
 			</Link>
 		</li>
+	);
+}
+
+function Button({url, text}: Button) {
+	return (
+		<Link href={url} className="flex items-center p-6 text-xl lg:text-lg lg:px-4 md:py-2 rounded-sm font-bold bg-secondary text-text transition ease-in-out hover:translate-y-[-5px]">
+			<span className="block">{text}</span>
+		</Link>
 	);
 }
 
@@ -49,10 +65,11 @@ function MobileNavLink({ url, text, closeMenu }: MobileNavLink) {
 	);
 }
 
-export default function Navbar({links, logoUrl, logoText}: {
+export default function Navbar({links, logoUrl, logoText, button}: {
 	links: Array<NavLink>;
 	logoUrl: string | null;
 	logoText: string | null;
+	button: Button;
 }) {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 	const closeMenu = () => {
@@ -74,9 +91,7 @@ export default function Navbar({links, logoUrl, logoText}: {
 						))}
 					</ul>
 					<div className="md:flex md:justify-center md:items-center">
-						<Link href={''} className="flex items-center p-6 text-xl lg:text-lg lg:px-4 md:py-2 rounded-sm font-bold bg-secondary text-text transition ease-in-out hover:translate-y-[-5px]">
-							<span className="block">play.amblydia.com</span>
-						</Link>
+						<Button key={button.id} {...button} />
 					</div>
 				</div>
 			</nav>

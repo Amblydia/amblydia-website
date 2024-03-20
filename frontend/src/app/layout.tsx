@@ -23,6 +23,7 @@ async function getGlobal(): Promise<any> {
 		"favicon",
 		"notificationBanner.link",
 		"navbar.links",
+		"navbar.button",
 		"navbar.navbarLogo.logoImg",
 		"footer.footerLogo.logoImg",
 		"footer.menuLinks",
@@ -72,6 +73,7 @@ export default async function RootLayout({children}: {children: React.ReactNode;
 				links={navbar.links}
 				logoUrl={navbarLogoUrl}
 				logoText={navbar.navbarLogo.logoText}
+				button={navbar.button}
 				/>
 
 				<div className="content">

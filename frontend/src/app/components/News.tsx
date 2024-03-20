@@ -15,9 +15,16 @@ interface Meta {
 
 interface NewsProps {
 	data: {
-	  id: string;
-	  title: string;
-	  description: string;
+        id: string;
+		title: string;
+		description: string;
+		button: {
+			id: number;
+			url: string;
+			newTab: boolean;
+			text: string;
+			type: string;
+		};
 	};
 }
 
@@ -72,7 +79,7 @@ export default function News({ data }: NewsProps) {
 			</div>
 			<OnePost data={datas} ></OnePost>
 			<div className="pt-12 flex justify-center">
-				<a href="/blog" className="inline-flex mt-3 py-2 px-6 font-bold text-lg rounded-sm uppercase bg-secondary text-text transition ease-in-out hover:translate-y-[-5px]">More Blogs</a>
+				<a href={data.button.url} className="inline-flex mt-3 py-2 px-6 font-bold text-lg rounded-sm uppercase bg-secondary text-text transition ease-in-out hover:translate-y-[-5px]">More Blogs</a>
 			</div>
 		</section>
   	);

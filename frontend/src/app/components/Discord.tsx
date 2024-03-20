@@ -4,7 +4,13 @@ interface DiscordProps {
         id: string;
         title: string;
         description: string;
-        url: string;
+		button: {
+			id: number;
+			url: string;
+			newTab: boolean;
+			text: string;
+			type: string;
+		};
 	};
 }
 
@@ -17,7 +23,11 @@ export default function Discord({ data }: DiscordProps) {
 						<div className="text-center">
 							<div className="font-bold text-2xl mb-4">{data.title}</div>
 							<p className="text-lg">{data.description}</p>
-							<div className="pt-8 flex items-center justify-center"><a href="/blog" className="inline-flex  mt-3 py-2 px-6 font-bold text-lg rounded-sm transition-colors uppercase shadow-sm shadow-gray-800 bg-blurple-500 text-white hover:shadow-gray-800 hover:shadow-sm hover:bg-blurple-600">Join Discord</a></div>
+							<div className="pt-8 flex items-center justify-center">
+								<a href={data.button.url} className="inline-flex  mt-3 py-2 px-6 font-bold text-lg rounded-sm transition-colors uppercase shadow-sm shadow-gray-800 bg-blurple-500 text-white hover:shadow-gray-800 hover:shadow-sm hover:bg-blurple-600">
+									{data.button.text}
+								</a>
+							</div>
 						</div>
 					</div>
 				</div>

@@ -66,9 +66,16 @@ export default function Hero({ data }: HeroProps) {
 				/>
 				<h1 className="my-5 font-bold text-6xl">{data.title}<br /> <span className="">{data.description}</span></h1>
 				<div className="mt-10 md:flex md:justify-center md:items-center">
-					<Link href={''} className="flex items-center p-6 text-xl lg:text-lg lg:px-8 md:py-2 rounded-sm font-bold bg-secondary text-text transition ease-in-out hover:translate-y-[-5px]">
-						<span className="block">Play Now</span>
-					</Link>
+					{data.buttons.map((button: Button, index: number) => (
+						<Link
+							key={index}
+							href={button.url}
+							target={button.newTab ? "_blank" : "_self"}
+							className={renderButtonStyle(button.type)}
+						>
+							<span className="block">{button.text}</span>
+						</Link>
+            		))}
 				</div>
 			</div>
 		</header>
