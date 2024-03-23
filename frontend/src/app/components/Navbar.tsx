@@ -30,7 +30,7 @@ function NavLink({ url, text }: NavLink) {
 
 	return (
 		<li className="mb-4 md:mb-0 last:mr-0 mr-4 relative">
-			<Link href={url} className={`flex items-center p-6 text-xl lg:text-lg lg:px-6 md:py-2 rounded-md transition-colors font-bold ${path === url && "opacity-[0.6]"} hover:opacity-[0.6] hover:transition-opacity `}>
+			<Link href={`${url}`} className={`flex items-center p-6 text-xl lg:text-lg lg:px-6 md:py-2 rounded-md transition-colors font-bold ${path === url && "opacity-[0.6]"} hover:opacity-[0.6] hover:transition-opacity `}>
 				{text}
 			</Link>
 		</li>
@@ -39,7 +39,7 @@ function NavLink({ url, text }: NavLink) {
 
 function Button({url, text}: Button) {
 	return (
-		<Link href={url} className="flex items-center p-6 text-xl lg:text-lg lg:px-4 md:py-2 rounded-sm font-bold bg-secondary text-text transition ease-in-out hover:translate-y-[-5px]">
+		<Link href={`${url}`} className="flex items-center p-6 text-xl lg:text-lg lg:px-4 md:py-2 rounded-sm font-bold bg-secondary text-text transition ease-in-out hover:translate-y-[-5px]">
 			<span className="block">{text}</span>
 		</Link>
 	);
