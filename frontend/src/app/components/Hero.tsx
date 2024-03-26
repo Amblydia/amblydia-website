@@ -71,7 +71,7 @@ export default function Hero({ data }: HeroProps) {
 							key={index}
 							href={button.url}
 							target={button.newTab ? "_blank" : "_self"}
-							className={renderButtonStyle(button.type)}
+							className={`${renderButtonStyle(button.type)} inline-flex items-center py-2 px-6 text-lg rounded-sm font-bold uppercase transition ease-in-out hover:translate-y-[-5px]`}
 						>
 							<span className="block">{button.text}</span>
 						</Link>

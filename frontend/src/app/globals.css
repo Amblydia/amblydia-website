@@ -6,7 +6,9 @@
 /******************************************* 
   Rich Text Styles
 *******************************************/ 
-
+.container {
+  @apply w-full px-4;
+}
 /* Headers */
 .rich-text h1 {
     @apply text-4xl font-bold mb-4;

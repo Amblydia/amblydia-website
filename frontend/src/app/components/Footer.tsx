@@ -67,39 +67,39 @@ export default function Footer({
 }) {
 
   return (
-    <footer className="bg-text/5 text-text container mx-auto mb-10 rounded-md px-10 py-12">
-    <div className="container mx-auto">
-      <div className="flex flex-wrap justify-between items-center gap-4">
-        <div className="flex w-1/2 flex-auto items-center justify-start order-1">
-          <Logo src={logoUrl} />
-          <p className="text-s mt-3 ml-8">
-            {footertext1}
-            <br />
-            {footertext2}
-            <br />
-            {footertext3}
-          </p>
-        </div>
-        <div className="flex-auto w-1/4 text-left order-2">
-          <ul className="list-none pl-0 flex justify-end flex-row gap-12">
-            {socialLinks.map((link: FooterLink) => {
-              return (
-                <a
-                  key={link.id}
-                  rel="noopener noreferrer"
-                  href={link.url}
-                  title={link.text}
-                  target={link.newTab ? "_blank" : "_self"}
-                  className="transition-opacity hover:text-white"
-                >
-                  <RenderSocialIcon social={link.social} />
-                </a>
-              );
-            })}
-          </ul>
-        </div>
-      </div>
-    </div>
-  </footer>
+    <footer className="container mx-auto">
+		<div className="bg-text/5 text-text mb-10 rounded-md px-10 py-12">
+			<div className="flex flex-wrap justify-between items-center gap-4">
+				<div className="flex w-1/2 flex-auto items-center justify-start order-1">
+					<Logo src={logoUrl} />
+					<p className="text-s mt-3 ml-8">
+						{footertext1}
+						<br />
+						{footertext2}
+						<br />
+						{footertext3}
+					</p>
+				</div>
+				<div className="flex-auto w-1/4 text-left order-2">
+					<ul className="list-none pl-0 flex justify-end flex-row gap-12">
+						{socialLinks.map((link: FooterLink) => {
+							return (
+								<a
+									key={link.id}
+									rel="noopener noreferrer"
+									href={link.url}
+									title={link.text}
+									target={link.newTab ? "_blank" : "_self"}
+									className="transition-opacity hover:text-white"
+								>
+									<RenderSocialIcon social={link.social} />
+								</a>
+							);
+						})}
+					</ul>
+				</div>
+			</div>
+		</div>
+  	</footer>
   );
 }
