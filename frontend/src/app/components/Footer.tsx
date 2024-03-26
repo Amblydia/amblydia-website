@@ -70,7 +70,7 @@ export default function Footer({
     <footer className="container mx-auto">
 		<div className="bg-text/5 text-text mb-10 rounded-md px-10 py-12">
 			<div className="flex flex-wrap justify-between items-center gap-4">
-				<div className="flex w-1/2 flex-auto items-center justify-start order-1">
+				<div className="flex w-auto flex-auto items-center justify-start order-1">
 					<Logo src={logoUrl} />
 					<p className="text-s mt-3 ml-8">
 						{footertext1}
@@ -80,7 +80,7 @@ export default function Footer({
 						{footertext3}
 					</p>
 				</div>
-				<div className="flex-auto w-1/4 text-left order-2">
+				<div className="flex-auto w-auto text-left order-2">
 					<ul className="list-none pl-0 flex justify-end flex-row gap-12">
 						{socialLinks.map((link: FooterLink) => {
 							return (
