@@ -37,8 +37,15 @@ export interface ContentSection {
 	buttons: Button[];
 }
 
+export interface Metadata {
+	id: number;
+	metaTitle: string;
+	metaDescription: string;
+}
+
 export interface Attribute {
 	shortName: string;
+	metadata: Metadata[];
 	slug: string;
 	createdAt: string;
 	updatedAt: string;

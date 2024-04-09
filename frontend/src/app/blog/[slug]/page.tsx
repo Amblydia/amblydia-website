@@ -1,3 +1,4 @@
+import { FALLBACK_SEO } from '@/app/utils/constants';
 import { fetchAPI } from '@/app/utils/fetch-api';
 import Post from '@/app/views/post';
 import type { Metadata } from 'next';
@@ -41,12 +42,14 @@ async function getMetaData(slug: string) {
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
     const meta = await getMetaData(params.slug);
-    const metadata = meta[0].attributes.seo;
-
-    return {
-        title: metadata.metaTitle,
-        description: metadata.metaDescription,
-    };
+    if(!meta[0]) { 
+        return FALLBACK_SEO;
+    } else {
+        const metadata = meta[0].attributes.seo;
+        return {
+            title: metadata.metaTitle,
+        };
+    }
 }
 
 export default async function PostRoute({ params }: { params: { slug: string } }) {

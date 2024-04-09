@@ -1,6 +1,7 @@
 import { formatDate, getStrapiMedia } from '@/app/utils/api-helpers';
 import { postRenderer } from '@/app/utils/post-renderer';
 import { renderTagStyle } from '../utils/render-tag-style';
+import Image from 'next/image';
 
 interface Post {
     id: number;
@@ -26,15 +27,15 @@ export default function Post({ data }: { data: Post }) {
     const imageUrl = getStrapiMedia(cover.data.attributes.url);
     return (
         <article className="space-y-8">
-            {/* <Image
+            <Image
                 src={imageUrl || ""}
                 alt="article cover image"
                 width={1080}
                 height={720}
                 className="w-full h-auto rounded-lg"
-            /> */}
-            <div className={`bg-cover bg-center rounded-md pb-[50%]`} style={{backgroundImage: `url(${imageUrl})`}}>
-            </div>
+            />
+            {/* <div className={`bg-cover bg-center rounded-md pb-[50%]`} style={{backgroundImage: `url(${imageUrl})`}}>
+            </div> */}
             
             <div className="">
                 <div className='mb-2'>

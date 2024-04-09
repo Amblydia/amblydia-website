@@ -1,4 +1,4 @@
 export const FALLBACK_SEO = {
-    title: "Strapi Starter Next Blog",
-    description: "Strapi Starter Next Blog",
+    title: "Amblydia Network",
+    description: "A New Minecraft Bedrock Survival Experience",
 }

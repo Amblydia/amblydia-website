@@ -11,13 +11,15 @@ type Props = {
 
 export async function generateMetadata({params}: Props): Promise<Metadata> {
     const page = await getPageBySlug(params.slug);
+    if (!page.data) {
+        return FALLBACK_SEO;
+    } else {
+        const metadata = page.data[0].attributes?.metadata; //TODO fix this, its a backend error dealing with populate
 
-    if (!page.data[0].attributes?.seo) return FALLBACK_SEO;
-    const metadata = page.data[0].attributes?.seo
-
-    return {
-        title: metadata.metaTitle,
-        description: metadata.metaDescription
+        return {
+            title: page.data[0].attributes?.heading,
+            description: page.data[0].attributes?.description
+        }
     }
 }
 

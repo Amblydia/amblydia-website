@@ -48,6 +48,7 @@ export async function generateMetadata(): Promise<Metadata> {
 		icons: {
 			icon: [new URL(url, getStrapiURL())],
 		},
+		keywords: "Amblydia Network, Amblydia Network Blog, Amblydia Network News, Minecraft Bedrock Server, Amblydia Network Minecraft Bedrock, Amblydia Network IP",
 	};
 }
 
