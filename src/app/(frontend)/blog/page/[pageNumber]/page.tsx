@@ -38,18 +38,19 @@ export default async function Page({ params: paramsPromise }: Args) {
       <PageClient />
       <div className="container mb-16">
         <div className="prose dark:prose-invert max-w-none">
-          <h1>Posts</h1>
+          <h1>News</h1>
+          <p>Stay up to date with the latest blogs & updates!</p>
         </div>
       </div>
 
-      <div className="container mb-8">
+      {/* <div className="container mb-8">
         <PageRange
           collection="posts"
           currentPage={posts.page}
           limit={12}
           totalDocs={posts.totalDocs}
         />
-      </div>
+      </div> */}
 
       <CollectionArchive posts={posts.docs} />
 
@@ -65,7 +66,7 @@ export default async function Page({ params: paramsPromise }: Args) {
 export async function generateMetadata({ params: paramsPromise }: Args): Promise<Metadata> {
   const { pageNumber } = await paramsPromise
   return {
-    title: `Payload Website Template Posts Page ${pageNumber || ''}`,
+    title: `Amblydia Network Blog Page ${pageNumber || ''}`,
   }
 }
 
